@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DevOps-Bot | DOB-HOST-CLI</title>
+  <link rel="stylesheet" href="styles/installation.css">
+  <link rel="icon" href="styles/assets/images/favicon-32x32.png" type="image/png">
+</head>
+<body class="official">
+  <!-- Header Toolbar -->
+  <header class="toolbar">
+    <div class="logo" onclick="navigateHome()">DevOps-Bot</div>
+    <nav class="nav-links">
+      <a href="officialwebsite.html" class="nav-link" onclick="navigateOfficialWebsite()">Home</a>
+      <a href="features.html" class="nav-link">Features</a>
+      <a href="docs.html" class="nav-link">Docs</a>
+      <a href="Community.html" class="nav-link">Community</a>
+      <a href="blog.html" class="nav-link">Blog</a>
+      <a href="About.html" class="nav-link">About</a>
+    </nav>
+    <div class="search-bar">
+      <input type="text" id="search-input" placeholder="Search...">
+      <button onclick="performSearch()">Search</button>
+    </div>
+  </header>
+
+  <!-- Sidebar (optional) -->
+    <!-- Sidebar (optional) -->
+    <aside id="sidebar" class="sidebar" style="background: url('styles/assets/images/sidebar.png') no-repeat center center; background-size: cover;">
+      <div class="search-bar">
+        <input type="text" id="sidebar-search-input" placeholder="Search..." oninput="showSuggestions()">
+        <div id="suggestions" class="suggestions"></div>
+        <button onclick="performSidebarSearch()">Search</button>
+      </div>
+      <ul>
+        <li><a href="officialwebsite.html">Introduction</a></li>
+        <li>
+          <a href="#" onclick="toggleNested(event)">Getting Started</a>
+          <ul class="nested">
+            <li><a href="installation.html">Installation</a></li>
+            <li><a href="uninstall.html">Uninstall</a></li>
+            <li><a href="comingsoon.html">Requirements</a></li>
+            <li><a href="comingsoon.html">Best Practices</a></li>
+            <li>
+              <a href="#" onclick="toggleNested(event)">Functions</a>
+              <ul class="nested">
+                <li><a href="webhook.html">Webhook</a></li>
+                <li><a href="persona.html">Persona</a></li>
+                <li><a href="infracred.html">Infrascrid</a></li>
+                <li><a href="vault.html">Vault</a></li>
+                <li><a href="plugins.html">Plugins</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" onclick="toggleNested(event)">User Interfaces</a>
+              <ul class="nested">
+                <li><a href="dob-host-cli.html">Host CLI</a></li>
+                <li><a href="dob-cli.html">Remote CLI</a></li>
+                <li><a href="ui.html">UI</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="#" onclick="toggleNested(event)">Features</a>
+          <ul class="nested">
+            <li>
+              <a href="aws.html" onclick="toggleNested(event)">CI/CD</a>
+              <ul class="nested">
+                <li><a href="infracircle.html">InfraCycle</a></li>
+                <li><a href="dobp.html">DOBProxy</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" onclick="toggleNested(event)">Provisioning</a>
+              <ul class="nested">
+                <li><a href="screenplay.html">Screenplay</a></li>
+              </ul>
+            </li>                             
+            <li>
+              <a href="#" onclick="toggleNested(event)">Configuration</a>
+              <ul class="nested">
+                <li><a href="infraset.html">InfraSet</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="#" onclick="toggleNested(event)">Providers</a>
+          <ul class="nested">
+            <li>
+              <a href="#" onclick="toggleNested(event)">AWS</a>
+              <ul class="nested">
+                <li><a href="aws.html">Configuration</a></li>
+                <li>
+                  <a href="#" onclick="toggleNested(event)">Commands</a>
+                  <ul class="nested">
+                    <li><a href="comingsoon.html">Imperative</a></li>
+                    <li><a href="Aws_declartive.html">Declarative</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" onclick="toggleNested(event)">Azure</a>
+              <ul class="nested">
+                <li><a href="azure.html">Configuration</a></li>
+                <li>
+                  <a href="#" onclick="toggleNested(event)">Commands</a>
+                  <ul class="nested">
+                    <li><a href="comingsoon.html">Imperative</a></li>
+                    <li><a href="comingsoon.html">Declarative</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" onclick="toggleNested(event)">GCP</a>
+              <ul class="nested">
+                <li><a href="gcp.html">Configuration</a></li>
+                <li>
+                  <a href="#" onclick="toggleNested(event)">Commands</a>
+                  <ul class="nested">
+                    <li><a href="comingsoon.html">Imperative</a></li>
+                    <li><a href="comingsoon.html">Declarative</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="#" onclick="toggleNested(event)">Third Party Integration Tools</a>
+          <ul class="nested">
+            <li><a href="ansible.html">Ansible</a></li>
+            <li><a href="Kubernetes.html">Kubernetes</a></li>
+            <li><a href="dockerswarm.html">Docker Swarm</a></li>
+            <li><a href="jenkins.html">Jenkins</a></li>
+          </ul>
+        </li>
+        <li><a href="comingsoon.html">Use Cases</a></li>
+        <li><a href="comingsoon.html">API Reference</a></li>
+        <li><a href="comingsoon.html">Release Notes</a></li>
+      </ul>
+    </aside>
+  
+  <!-- Main Content Area -->
+  <main class="main-content">
+      <section class="hero" style="background: url('styles/assets/images/back.png') no-repeat center center; background-size: cover;">
+        <h1>DOB Host CLI - User Guide</h1>
+        <p>The DOB Host CLI is a powerful command-line interface that allows users to execute and manage tasks on the DevOps-Bot host server. This guide provides an overview of the CLI, its commands, and how to navigate its features effectively.</p>
+      </section>
+    
+      <section class="docker-swarm">
+        <h2>Overview of DOB Host CLI</h2>
+        <p>The DOB Host CLI is a feature-rich tool designed for remote task execution and infrastructure management. It supports a variety of cloud providers, orchestration tools, and automation frameworks. Follow the guide below to get started.</p>
+    
+        <h3>Pre-requisites</h3>
+        <h4>Ensure DevOps-Bot is Installed:</h4>
+        <p>Before using the CLI, ensure that the DevOps-Bot (DOB) is installed on your system. For detailed installation instructions, refer to the <a href="install.html">DevOps-Bot Installation Guide</a>.</p>
+    
+        <h3>Basic Commands</h3>
+        <p>After installing DevOps-Bot, you can check the version, available commands, and their options using the following commands:</p>
+        <ul>
+          <li>Check the version of DevOps-Bot:</li>
+          <pre><code class="language-bash">dob --version</code></pre>
+          <p>Example output:</p>
+          <pre><code>
+    devops-bot, version 0.1
+    Python Version: 3.9.21
+    Operating System: Linux 5.14.0-229.el9.x86_64
+          </code></pre>
+    
+          <li>List available commands and options:</li>
+          <pre><code class="language-bash">dob --help</code></pre>
+          <p>Example output:</p>
+          <pre><code>
+    Usage: dob [OPTIONS] COMMAND [ARGS]...
+    
+    Options:
+      --v, --version  Show version of the devops-bot tool.
+      --debug         Enable debug mode to show full error tracebacks.
+      --help          Show this message and exit.
+    
+    Commands:
+      activation               Activate context for Kubernetes or Docker...
+      aws                      Commands to manage AWS resources.
+      azure                    Commands to manage Azure resources.
+      gcp                      Commands to manage GCP resources.
+      generate-token           Generate a token for a user.
+      run-ui                   Run the UI for the screenplay.
+      ...
+          </code></pre>
+        </ul>
+    
+        <h3>Common Use Case: Managing AWS Resources</h3>
+        <p>For managing AWS resources, use the following commands:</p>
+        <ul>
+          <li>View available AWS commands:</li>
+          <pre><code class="language-bash">dob aws --help</code></pre>
+          <p>Example output:</p>
+          <pre><code>
+    Usage: dob aws [OPTIONS] COMMAND [ARGS]...
+    
+    Commands:
+      add-user-to-group         Add a user to an IAM group.
+      create-ec2-instance       Create an EC2 instance.
+      create-s3-bucket          Create an S3 bucket.
+      describe-ec2-instances    Describe EC2 instances.
+      upload-s3-file            Upload a file to an S3 bucket.
+      ...
+          </code></pre>
+    
+          <li>Example: Create an S3 bucket:</li>
+          <pre><code class="language-bash">dob aws create-s3-bucket --name my-s3-bucket --region us-east-1</code></pre>
+    
+          <li>Example: Describe EC2 instances:</li>
+          <pre><code class="language-bash">dob aws describe-ec2-instances</code></pre>
+        </ul>
+    
+        <h3>Outputs and Variables</h3>
+        <p>You can view or export output variables from tasks using the `outputs` command:</p>
+        <ul>
+          <li>View output variables:</li>
+          <pre><code class="language-bash">dob aws outputs</code></pre>
+    
+          <li>Export output variables to a file:</li>
+          <pre><code class="language-bash">dob aws outputs --export-file /path/to/output.json</code></pre>
+    
+          <li>Import output variables from a file:</li>
+          <pre><code class="language-bash">dob aws outputs --import-file /path/to/output.json</code></pre>
+        </ul>
+    
+        <h3>Debugging and Help</h3>
+        <p>Enable debug mode to view detailed error messages:</p>
+        <pre><code class="language-bash">dob --debug</code></pre>
+        <p>Get help for specific commands:</p>
+        <pre><code class="language-bash">dob <command> --help</code></pre>
+    
+        <h3>Notes</h3>
+        <ul>
+          <li>Ensure you have the appropriate permissions and credentials for the tasks you want to execute.</li>
+          <li>Refer to the detailed documentation for each command using the `--help` option.</li>
+          <li>Debug mode can be useful for troubleshooting issues during execution.</li>
+        </ul>
+      </section>
+    </main>
+    <footer class="footer">
+        <p>&copy; 2025 DevOps-Bot. All rights reserved.</p>
+      </footer>
+    
+      <!-- JavaScript Files -->
+      <script src="scripts/main.js"></script>
+      <script>
+        function toggleNested(event) {
+          event.preventDefault();
+          const parent = event.target.parentElement;
+          parent.classList.toggle('active');
+        }
+    
+        function performSearch() {
+          const query = document.getElementById('search-input').value.toLowerCase();
+          const links = document.querySelectorAll('.nav-links a, .sidebar a');
+    
+          links.forEach(link => {
+            if (link.textContent.toLowerCase().includes(query)) {
+              link.style.display = 'block';
+            } else {
+              link.style.display = 'none';
+            }
+          });
+        }
+    
+        function navigateHome() {
+          window.location.href = 'Home.html';
+        }
+    
+        function navigateOfficialWebsite() {
+          window.location.href = 'officialwebsite.html';
+        }
+      </script>
+    </body>
+    </html>

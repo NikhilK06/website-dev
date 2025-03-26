@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DevOps-Bot | DOB-CLI</title>
+  <link rel="stylesheet" href="styles/installation.css">
+  <link rel="icon" href="styles/assets/images/favicon-32x32.png" type="image/png">
+</head>
+<body class="official">
+  <!-- Header Toolbar -->
+  <header class="toolbar">
+    <div class="logo" onclick="navigateHome()">DevOps-Bot</div>
+    <nav class="nav-links">
+      <a href="officialwebsite.html" class="nav-link" onclick="navigateOfficialWebsite()">Home</a>
+      <a href="features.html" class="nav-link">Features</a>
+      <a href="docs.html" class="nav-link">Docs</a>
+      <a href="Community.html" class="nav-link">Community</a>
+      <a href="blog.html" class="nav-link">Blog</a>
+      <a href="About.html" class="nav-link">About</a>
+    </nav>
+    <div class="search-bar">
+      <input type="text" id="search-input" placeholder="Search...">
+      <button onclick="performSearch()">Search</button>
+    </div>
+  </header>
+
+  <!-- Sidebar (optional) -->
+    <!-- Sidebar (optional) -->
+    <aside id="sidebar" class="sidebar" style="background: url('styles/assets/images/sidebar.png') no-repeat center center; background-size: cover;">
+      <div class="search-bar">
+        <input type="text" id="sidebar-search-input" placeholder="Search..." oninput="showSuggestions()">
+        <div id="suggestions" class="suggestions"></div>
+        <button onclick="performSidebarSearch()">Search</button>
+      </div>
+      <ul>
+        <li><a href="officialwebsite.html">Introduction</a></li>
+        <li>
+          <a href="#" onclick="toggleNested(event)">Getting Started</a>
+          <ul class="nested">
+            <li><a href="installation.html">Installation</a></li>
+            <li><a href="uninstall.html">Uninstall</a></li>
+            <li><a href="comingsoon.html">Requirements</a></li>
+            <li><a href="comingsoon.html">Best Practices</a></li>
+            <li>
+              <a href="#" onclick="toggleNested(event)">Functions</a>
+              <ul class="nested">
+                <li><a href="webhook.html">Webhook</a></li>
+                <li><a href="persona.html">Persona</a></li>
+                <li><a href="infracred.html">Infrascrid</a></li>
+                <li><a href="vault.html">Vault</a></li>
+                <li><a href="plugins.html">Plugins</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" onclick="toggleNested(event)">User Interfaces</a>
+              <ul class="nested">
+                <li><a href="dob-host-cli.html">Host CLI</a></li>
+                <li><a href="dob-cli.html">Remote CLI</a></li>
+                <li><a href="ui.html">UI</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="#" onclick="toggleNested(event)">Features</a>
+          <ul class="nested">
+            <li>
+              <a href="aws.html" onclick="toggleNested(event)">CI/CD</a>
+              <ul class="nested">
+                <li><a href="infracircle.html">InfraCycle</a></li>
+                <li><a href="dobp.html">DOBProxy</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" onclick="toggleNested(event)">Provisioning</a>
+              <ul class="nested">
+                <li><a href="screenplay.html">Screenplay</a></li>
+              </ul>
+            </li>                             
+            <li>
+              <a href="#" onclick="toggleNested(event)">Configuration</a>
+              <ul class="nested">
+                <li><a href="infraset.html">InfraSet</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="#" onclick="toggleNested(event)">Providers</a>
+          <ul class="nested">
+            <li>
+              <a href="#" onclick="toggleNested(event)">AWS</a>
+              <ul class="nested">
+                <li><a href="aws.html">Configuration</a></li>
+                <li>
+                  <a href="#" onclick="toggleNested(event)">Commands</a>
+                  <ul class="nested">
+                    <li><a href="comingsoon.html">Imperative</a></li>
+                    <li><a href="Aws_declartive.html">Declarative</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" onclick="toggleNested(event)">Azure</a>
+              <ul class="nested">
+                <li><a href="azure.html">Configuration</a></li>
+                <li>
+                  <a href="#" onclick="toggleNested(event)">Commands</a>
+                  <ul class="nested">
+                    <li><a href="comingsoon.html">Imperative</a></li>
+                    <li><a href="comingsoon.html">Declarative</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" onclick="toggleNested(event)">GCP</a>
+              <ul class="nested">
+                <li><a href="gcp.html">Configuration</a></li>
+                <li>
+                  <a href="#" onclick="toggleNested(event)">Commands</a>
+                  <ul class="nested">
+                    <li><a href="comingsoon.html">Imperative</a></li>
+                    <li><a href="comingsoon.html">Declarative</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="#" onclick="toggleNested(event)">Third Party Integration Tools</a>
+          <ul class="nested">
+            <li><a href="ansible.html">Ansible</a></li>
+            <li><a href="Kubernetes.html">Kubernetes</a></li>
+            <li><a href="dockerswarm.html">Docker Swarm</a></li>
+            <li><a href="jenkins.html">Jenkins</a></li>
+          </ul>
+        </li>
+        <li><a href="comingsoon.html">Use Cases</a></li>
+        <li><a href="comingsoon.html">API Reference</a></li>
+        <li><a href="comingsoon.html">Release Notes</a></li>
+      </ul>
+    </aside>
+  
+    <main class="main-content">
+        <section class="hero" style="background: url('styles/assets/images/back.png') no-repeat center center; background-size: cover;">
+          <h1>DOB-CLI - User Guide</h1>
+          <p>Use the DOB-CLI to remotely execute tasks on the DevOps-Bot host server with ease. This guide provides step-by-step instructions to install, configure, and test the DOB-CLI.</p>
+        </section>
+      
+        <section class="docker-swarm">
+          <h2>User Guide: DOB-CLI</h2>
+          <p>The DOB-CLI enables users to manage and execute tasks on a DevOps-Bot host server remotely. To use the CLI, you need a **persona credential**, which is part of the RBAC (Role-Based Access Control) functionality.</p>
+      
+          <h3>Pre-requisites</h3>
+          <h4>Ensure the Following Are Installed:</h4>
+          <ul>
+            <li>Git</li>
+            <li>Python 3</li>
+            <li>Pip (Python Package Installer)</li>
+          </ul>
+      
+          <h3>Installation Steps</h3>
+          <ol>
+            <li>Update your package list:</li>
+            <pre><code class="language-bash">apt-get update</code></pre>
+      
+            <li>Install Git:</li>
+            <pre><code class="language-bash">apt install git</code></pre>
+      
+            <li>Install Pip:</li>
+            <pre><code class="language-bash">apt install python3-pip</code></pre>
+      
+            <li>Clone the DOB-CLI repository:</li>
+            <pre><code class="language-bash">git clone https://github.com/Devops-Bot-Official/dob-cli.git</code></pre>
+      
+            <li>Navigate to the repository folder:</li>
+            <pre><code class="language-bash">cd dob-cli</code></pre>
+      
+            <li>Install the DOB-CLI package:</li>
+            <pre><code class="language-bash">pip install dob_cli-0.1-py3-none-any.whl</code></pre>
+      
+            <li>Verify installation by running:</li>
+            <pre><code class="language-bash">dob --help</code></pre>
+          </ol>
+      
+          <h3>Configuration Steps</h3>
+          <p>To configure DOB-CLI, you need the following:</p>
+          <ul>
+            <li>A **persona name**</li>
+            <li>A **persona token**</li>
+            <li>A **private key file**</li>
+            <li>The **host endpoint** of the DevOps-Bot server</li>
+          </ul>
+      
+          <h4>Steps:</h4>
+          <ol>
+            <li>Create a private key file:</li>
+            <pre><code class="language-bash">vim david_private.pem</code></pre>
+            <p>Add your private key contents to the file and save.</p>
+      
+            <li>Run the following command to configure the CLI:</li>
+            <pre><code class="language-bash">
+dob config --persona-name david --token 827a89a7-8c36-416b-8e44-e7f78960618f --private-key-path david_private.pem --host-endpoint http://IP:4102
+            </code></pre>
+            <p>Replace the values with your own persona name, token, private key path, and host endpoint.</p>
+          </ol>
+      
+          <h3>Testing the Configuration</h3>
+          <h4>Run a Sample Proxy Command:</h4>
+          <p>To test the configuration, execute the following command:</p>
+          <pre><code class="language-bash">dob run generate-webhook-secret</code></pre>
+          <p>If configured correctly, you’ll see a confirmation message, and a webhook secret will be generated successfully.</p>
+      
+          <h3>Notes</h3>
+          <ul>
+            <li>Ensure that your persona token is valid and has the required permissions.</li>
+            <li>Keep your private key file secure and do not share it with anyone.</li>
+            <li>If you face any issues, recheck the configuration command and ensure the host endpoint is accessible.</li>
+          </ul>
+        </section>
+        <br>
+        <section class="installation-photo">
+            <h3>Installation Steps PDF Reference for DOB-CLI</h3>
+            <p>For detailed installation steps, please refer to the PDF documentation:</p>
+            <br>
+            <object data="styles/assets/images/dob-cli.pdf" type="application/pdf" width="100%" height="600px">
+              <p>Your browser does not support PDFs. <a href="styles/assets/images/dob-cli.pdf" target="_blank">Download the PDF</a>.</p>
+            </object>
+          </section>          
+      </main>
+  
+    <footer class="footer">
+        <p>&copy; 2025 DevOps-Bot. All rights reserved.</p>
+      </footer>
+    
+      <!-- JavaScript Files -->
+      <script src="scripts/main.js"></script>
+      <script>
+        function toggleNested(event) {
+          event.preventDefault();
+          const parent = event.target.parentElement;
+          parent.classList.toggle('active');
+        }
+    
+        function performSearch() {
+          const query = document.getElementById('search-input').value.toLowerCase();
+          const links = document.querySelectorAll('.nav-links a, .sidebar a');
+    
+          links.forEach(link => {
+            if (link.textContent.toLowerCase().includes(query)) {
+              link.style.display = 'block';
+            } else {
+              link.style.display = 'none';
+            }
+          });
+        }
+    
+        function navigateHome() {
+          window.location.href = 'Home.html';
+        }
+    
+        function navigateOfficialWebsite() {
+          window.location.href = 'officialwebsite.html';
+        }
+      </script>
+    </body>
+    </html>
