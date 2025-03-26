@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DevOps-Bot | GCP Management Tool</title>
+  <link rel="stylesheet" href="styles/installation.css">
+  <link rel="icon" href="styles/assets/images/favicon-32x32.png" type="image/png">
+</head>
+<body class="official">
+  <!-- Header Toolbar -->
+  <header class="toolbar">
+    <div class="logo" onclick="navigateHome()">DevOps-Bot</div>
+    <nav class="nav-links">
+      <a href="officialwebsite.html" class="nav-link" onclick="navigateOfficialWebsite()">Home</a>
+      <a href="features.html" class="nav-link">Features</a>
+      <a href="docs.html" class="nav-link">Docs</a>
+      <a href="Community.html" class="nav-link">Community</a>
+      <a href="blog.html" class="nav-link">Blog</a>
+      <a href="About.html" class="nav-link">About</a>
+    </nav>
+    <div class="search-bar">
+      <input type="text" id="search-input" placeholder="Search...">
+      <button onclick="performSearch()">Search</button>
+    </div>
+  </header>
+
+  <!-- Sidebar (optional) -->
+    <!-- Sidebar (optional) -->
+    <aside id="sidebar" class="sidebar" style="background: url('styles/assets/images/sidebar.png') no-repeat center center; background-size: cover;">
+      <div class="search-bar">
+        <input type="text" id="sidebar-search-input" placeholder="Search..." oninput="showSuggestions()">
+        <div id="suggestions" class="suggestions"></div>
+        <button onclick="performSidebarSearch()">Search</button>
+      </div>
+      <ul>
+        <li><a href="officialwebsite.html">Introduction</a></li>
+        <li>
+          <a href="#" onclick="toggleNested(event)">Getting Started</a>
+          <ul class="nested">
+            <li><a href="installation.html">Installation</a></li>
+            <li><a href="uninstall.html">Uninstall</a></li>
+            <li><a href="comingsoon.html">Requirements</a></li>
+            <li><a href="comingsoon.html">Best Practices</a></li>
+            <li>
+              <a href="#" onclick="toggleNested(event)">Functions</a>
+              <ul class="nested">
+                <li><a href="webhook.html">Webhook</a></li>
+                <li><a href="persona.html">Persona</a></li>
+                <li><a href="infracred.html">Infrascrid</a></li>
+                <li><a href="vault.html">Vault</a></li>
+                <li><a href="plugins.html">Plugins</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" onclick="toggleNested(event)">User Interfaces</a>
+              <ul class="nested">
+                <li><a href="dob-host-cli.html">Host CLI</a></li>
+                <li><a href="dob-cli.html">Remote CLI</a></li>
+                <li><a href="ui.html">UI</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="#" onclick="toggleNested(event)">Features</a>
+          <ul class="nested">
+            <li>
+              <a href="aws.html" onclick="toggleNested(event)">CI/CD</a>
+              <ul class="nested">
+                <li><a href="infracircle.html">InfraCycle</a></li>
+                <li><a href="dobp.html">DOBProxy</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" onclick="toggleNested(event)">Provisioning</a>
+              <ul class="nested">
+                <li><a href="screenplay.html">Screenplay</a></li>
+              </ul>
+            </li>                             
+            <li>
+              <a href="#" onclick="toggleNested(event)">Configuration</a>
+              <ul class="nested">
+                <li><a href="infraset.html">InfraSet</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="#" onclick="toggleNested(event)">Providers</a>
+          <ul class="nested">
+            <li>
+              <a href="#" onclick="toggleNested(event)">AWS</a>
+              <ul class="nested">
+                <li><a href="aws.html">Configuration</a></li>
+                <li>
+                  <a href="#" onclick="toggleNested(event)">Commands</a>
+                  <ul class="nested">
+                    <li><a href="comingsoon.html">Imperative</a></li>
+                    <li><a href="Aws_declartive.html">Declarative</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" onclick="toggleNested(event)">Azure</a>
+              <ul class="nested">
+                <li><a href="azure.html">Configuration</a></li>
+                <li>
+                  <a href="#" onclick="toggleNested(event)">Commands</a>
+                  <ul class="nested">
+                    <li><a href="comingsoon.html">Imperative</a></li>
+                    <li><a href="comingsoon.html">Declarative</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" onclick="toggleNested(event)">GCP</a>
+              <ul class="nested">
+                <li><a href="gcp.html">Configuration</a></li>
+                <li>
+                  <a href="#" onclick="toggleNested(event)">Commands</a>
+                  <ul class="nested">
+                    <li><a href="comingsoon.html">Imperative</a></li>
+                    <li><a href="comingsoon.html">Declarative</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="#" onclick="toggleNested(event)">Third Party Integration Tools</a>
+          <ul class="nested">
+            <li><a href="ansible.html">Ansible</a></li>
+            <li><a href="Kubernetes.html">Kubernetes</a></li>
+            <li><a href="dockerswarm.html">Docker Swarm</a></li>
+            <li><a href="jenkins.html">Jenkins</a></li>
+          </ul>
+        </li>
+        <li><a href="comingsoon.html">Use Cases</a></li>
+        <li><a href="comingsoon.html">API Reference</a></li>
+        <li><a href="comingsoon.html">Release Notes</a></li>
+      </ul>
+    </aside>
+  
+  <!-- Main Content Area -->
+  <body>
+    <!-- Main Content Area -->
+    <main class="main-content">
+        <section class="hero" style="background: url('styles/assets/images/back.png') no-repeat center center; background-size: cover;">
+            <h1>GCP Management Tool - User Guide</h1>
+            <p>Manage GCP resources efficiently using declarative YAML configurations and imperative CLI commands. This guide provides a comprehensive overview of the process.</p>
+        </section>
+
+        <section class="docker-swarm">
+            <h2>User Guide: GCP Configuration with DevOps-Bot</h2>
+            <p>This guide walks you through the process of configuring DevOps-Bot to work with Google Cloud Platform (GCP). Follow the steps below to ensure a successful configuration.</p>
+
+            <h3>Pre-requisites</h3>
+            <h4>Ensure DevOps-Bot is Installed:</h4>
+            <p>Before proceeding, make sure that DevOps-Bot (dobe) is installed on your instance. Refer to the <a href="installation.html">DevOps-Bot Installation Guide</a> for detailed installation instructions.</p>
+            <h4>GCP Project:</h4>
+            <p>Verify that you have a GCP project created and accessible.</p>
+
+            <h3>Step 1: Generate GCP Credentials</h3>
+            <h4>Log into GCP Console:</h4>
+            <p>Go to the Google Cloud Console. Navigate to the IAM & Admin section.</p>
+
+            <h4>Create a Service Account:</h4>
+            <ol>
+                <li>Go to IAM & Admin > Service Accounts.</li>
+                <li>Click "Create Service Account."</li>
+                <li>Provide the following details:
+                    <ul>
+                        <li>Name: Enter a descriptive name (e.g., DevOps-Bot).</li>
+                        <li>Description: Provide a brief description (optional).</li>
+                    </ul>
+                </li>
+                <li>Click "Create and Continue."</li>
+            </ol>
+
+            <h4>Assign Roles:</h4>
+            <ol>
+                <li>On the next screen, assign appropriate roles (e.g., Editor or Custom Role based on your requirements).</li>
+                <li>Click "Continue" and "Done."</li>
+            </ol>
+
+            <h4>Generate and Download JSON Key:</h4>
+            <ol>
+                <li>Go to the Service Accounts list and find the account you created.</li>
+                <li>Click the three-dot menu and select "Manage Keys."</li>
+                <li>Click "Add Key" > "Create New Key" and select JSON format.</li>
+                <li>Download the JSON file to your local machine.</li>
+            </ol>
+
+            <h3>Step 2: Configure GCP in DevOps-Bot</h3>
+            <h4>Transfer the JSON File to Your Instance:</h4>
+            <p>Copy the JSON file with GCP credentials to your instance where DevOps-Bot is installed.</p>
+
+            <h4>Initialize DevOps-Bot:</h4>
+            <p>Run the following command to initialize the tool and create necessary files:</p>
+            <pre><code class="language-bash">dob brood --init</code></pre>
+
+            <h4>Configure GCP Credentials:</h4>
+            <p>Use the <code>dob gcp config</code> command to configure GCP with the JSON file:</p>
+            <pre><code class="language-bash">dob gcp config --file-path &lt;path_to_json_file&gt;</code></pre>
+            <p>Example:</p>
+            <pre><code class="language-bash">dob gcp config --file-path /root/gcp_credentials.json</code></pre>
+            <p>If the credentials are valid, you’ll see the following messages:</p>
+            <pre><code>GCP credentials encrypted and saved locally.
+GCP credentials configured successfully. You can delete the original JSON file for security.</code></pre>
+
+            <h3>Step 3: Test GCP Configuration</h3>
+            <h4>Create a YAML Configuration File:</h4>
+            <p>Create a file named <code>compute_instance.yaml</code> with the following content:</p>
+            <pre><code class="language-yaml">
+resources:
+  compute_instances:
+    - name: test-compute-instance-1
+      machine_type: n1-standard-1
+      zone: us-central1-a
+      image: projects/ubuntu-os-cloud/global/images/family/ubuntu-2004-lts
+      network: default
+      tags:
+        - web-server
+      labels:
+        env: test
+            </code></pre>
+
+            <h4>Run the Configuration File:</h4>
+            <p>Use the <code>dob gcp screenplay</code> command to execute the configuration:</p>
+            <pre><code class="language-bash">dob gcp screenplay compute_instance.yaml</code></pre>
+
+            <h4>Review and Confirm:</h4>
+            <p>The tool will validate and lint the YAML file. A final review of actions will be displayed. For example:</p>
+            <pre><code class="language-sql">
++----+------------------+---------------------------------------------------------------+
+|    | Category         | Value                                                         |
++====+==================+===============================================================+
+| +  | Compute Instance | Instance 1                                                    |
++----+------------------+---------------------------------------------------------------+
+| +  | Instance Name    | test-compute-instance-1                                       |
++----+------------------+---------------------------------------------------------------+
+| +  | Machine Type     | n1-standard-1                                                 |
++----+------------------+---------------------------------------------------------------+
+| +  | Zone             | us-central1-a                                                 |
++----+------------------+---------------------------------------------------------------+
+| +  | Image            | projects/ubuntu-os-cloud/global/images/family/ubuntu-2004-lts |
++----+------------------+---------------------------------------------------------------+
+| +  | Tags             | ['web-server']                                                |
++----+------------------+---------------------------------------------------------------+
+| +  | Network          | default                                                       |
++----+------------------+---------------------------------------------------------------+
+| +  | Labels           | {'env': 'test'}                                               |
++----+------------------+---------------------------------------------------------------+
+            </code></pre>
+            <p>When prompted, type <code>Y</code> to confirm and proceed.</p>
+
+            <h4>Successful Execution:</h4>
+            <p>The tool will create the specified resources in GCP and save the execution state:</p>
+            <pre><code>Compute Instance 'test-compute-instance-1' created successfully.
+SSH key injected into instance 'test-compute-instance-1'.
+Instance 'test-compute-instance-1' created with internal IP 10.128.15.230
+Execution state saved to: /etc/devops-bot/state_files/&lt;execution_file&gt;.yml</code></pre>
+
+            <h4>Notes:</h4>
+            <ul>
+                <li>Ensure that the service account has adequate permissions for the tasks you want to execute.</li>
+                <li>Use proper tags and configuration files to ensure efficient resource management.</li>
+            </ul>
+        </section>
+
+    <section class="docker-swarm">
+      <h2>Key Features</h2>
+      <ul>
+        <li><strong>Declarative YAML Support:</strong> Use YAML files to describe GCP resources and execute tasks.</li>
+        <li><strong>Direct CLI Command Support:</strong> For quick, ad-hoc resource and task management.</li>
+        <li><strong>Environment Variables Support:</strong> Customize configurations for different environments like dev, test, or prod.</li>
+        <li><strong>Variable Overrides:</strong> Override variables directly via the command line.</li>
+        <li><strong>Remote Configs:</strong> Load YAML files or variables from remote URLs.</li>
+        <li><strong>SSH Integration:</strong> Automatically inject SSH keys and add instance IPs to /etc/hosts.</li>
+      </ul>
+
+      <h2>Declarative YAML Approach</h2>
+      <h3>Workflow</h3>
+      <ol>
+        <li>Create a YAML Configuration File: Define resources such as VM instances and disks, or specify tasks to execute on remote instances.</li>
+        <li>Run the Command: Use <code>dob gcp screenplay</code> to validate and execute the YAML file.</li>
+        <li>Monitor Execution: The tool processes the file, validates variables, and provisions resources.</li>
+      </ol>
+
+      <h3>YAML Configuration Example</h3>
+      <h4>Creating a GCP Virtual Machine Instance</h4>
+      <pre><code class="language-yaml">
+resources:
+  instances:
+    - name: "my-instance"
+      machine_type: "n1-standard-1"
+      region: "us-central1"
+      zone: "us-central1-a"
+      disk_size: "50GB"
+      disk_type: "pd-standard"
+      network: "default"
+      subnetwork: "default"
+      tags:
+        - "web-server"
+      metadata:
+        startup-script: |
+          #!/bin/bash
+          echo "Welcome to GCP VM" > /var/www/html/index.html
+      labels:
+        environment: "production"
+      </code></pre>
+
+      <h4>Executing Tasks on Remote Instances</h4>
+      <pre><code class="language-yaml">
+resources:
+  remote_tasks:
+    - instance_name: "my-instance"
+      command: "sudo apt update && sudo apt upgrade -y"
+      user: "admin"
+      </code></pre>
+
+      <h4>Command to Execute YAML Configuration</h4>
+      <pre><code class="language-bash">
+dob gcp screenplay /path/to/config.yaml --environment dev --password mypassword --show
+      </code></pre>
+
+      <h3>Explanation of YAML Example</h3>
+      <ul>
+        <li><strong>Instances:</strong>
+          <ul>
+            <li><code>name</code>: Name of the GCP instance.</li>
+            <li><code>machine_type</code>: GCP machine type (e.g., n1-standard-1).</li>
+            <li><code>region</code> and <code>zone</code>: Specify where the instance is created.</li>
+            <li><code>disk_size</code> and <code>disk_type</code>: Disk configuration for the instance.</li>
+            <li><code>tags</code> and <code>labels</code>: Tags for network rules and organizational metadata.</li>
+          </ul>
+        </li>
+        <li><strong>Remote Tasks:</strong>
+          <ul>
+            <li><code>instance_name</code>: Name of the instance to execute the task on.</li>
+            <li><code>command</code>: Command to execute.</li>
+            <li><code>user</code>: The SSH username.</li>
+          </ul>
+        </li>
+      </ul>
+
+      <h2>Imperative CLI Commands</h2>
+      <h3>General Syntax</h3>
+      <pre><code class="language-bash">
+dob gcp screenplay [OPTIONS]
+      </code></pre>
+
+      <h3>Key Options</h3>
+      <ul>
+        <li><code>--screenplay</code>: Path to the YAML file defining resources and tasks.</li>
+        <li><code>--identifier</code> or <code>-id</code>: A unique identifier for the instance.</li>
+        <li><code>--username</code> or <code>-u</code>: SSH username for the remote instance.</li>
+        <li><code>--create-remote</code> or <code>--cr</code>: Inject SSH key into the created instance.</li>
+        <li><code>--add-remote</code> or <code>--ar</code>: Add the instance's IP and hostname to /etc/hosts.</li>
+        <li><code>--command</code> or <code>-c</code>: Command to execute on the instance.</li>
+        <li><code>--environment</code> or <code>-e</code>: Specify the environment (e.g., dev, test, prod).</li>
+        <li><code>--remote-config</code> or <code>--rc</code>: URL of a remote YAML configuration file.</li>
+        <li><code>--set</code>: Override variables directly from the command line.</li>
+      </ul>
+
+      <h3>Example Commands</h3>
+      <h4>Create and Execute Tasks on a VM</h4>
+      <pre><code class="language-bash">
+dob gcp screenplay /path/to/config.yaml \
+  --username admin \
+  --create-remote \
+  --environment prod \
+  --password "mypassword"
+      </code></pre>
+
+      <h4>Execute a Command on a Remote Instance</h4>
+      <pre><code class="language-bash">
+dob gcp screenplay --identifier my-instance --command "sudo apt update && sudo apt upgrade -y" --username admin
+      </code></pre>
+
+      <h4>Use Remote Configuration</h4>
+      <pre><code class="language-bash">
+dob gcp screenplay --remote-config https://example.com/config.yaml
+      </code></pre>
+
+      <h4>Override Variables</h4>
+      <pre><code class="language-bash">
+dob gcp screenplay /path/to/config.yaml --set region=us-east1 zone=us-east1-b
+      </code></pre>
+
+      <h4>Inject SSH Key and Update /etc/hosts</h4>
+      <pre><code class="language-bash">
+dob gcp screenplay /path/to/config.yaml --create-remote --add-remote
+      </code></pre>
+
+      <h2>Key Features Explained</h2>
+      <ul>
+        <li><strong>Remote Variables and Configurations:</strong>
+          <ul>
+            <li>Load remote YAML configuration with <code>--remote-config</code>.</li>
+            <li>Use <code>--remote-ver</code> for alternate variable files from a URL.</li>
+          </ul>
+        </li>
+        <li><strong>Environment Customization:</strong>
+          <ul>
+            <li>Switch between environments using <code>--environment</code>.</li>
+          </ul>
+        </li>
+        <li><strong>Password and Sensitive Data Handling:</strong>
+          <ul>
+            <li>Decrypt variables with <code>--password</code> and debug them using <code>--show</code>.</li>
+          </ul>
+        </li>
+        <li><strong>Command Overrides:</strong>
+          <ul>
+            <li>Dynamically override variables like <code>--set instance_type=n1-standard-1</code>.</li>
+          </ul>
+        </li>
+        <li><strong>Instance Management:</strong>
+          <ul>
+            <li>Add IPs and hostnames to /etc/hosts with <code>--add-remote</code>.</li>
+          </ul>
+        </li>
+      </ul>
+
+      <h2>YAML vs. CLI: When to Use Which</h2>
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>Declarative YAML</th>
+            <th>Imperative CLI</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Use Case</td>
+            <td>Complex, multi-resource setups</td>
+            <td>Quick, one-time operations</td>
+          </tr>
+          <tr>
+            <td>Flexibility</td>
+            <td>Automation-friendly, repeatable</td>
+            <td>Highly flexible for ad-hoc tasks</td>
+          </tr>
+          <tr>
+            <td>Complexity</td>
+            <td>Best for large-scale, consistent setups</td>
+            <td>Simpler, but limited for complex setups</td>
+          </tr>
+          <tr>
+            <td>Ease of Use</td>
+            <td>Requires YAML knowledge</td>
+            <td>Direct execution with less overhead</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>Best Practices</h2>
+      <ul>
+        <li>Always validate YAML files before execution.</li>
+        <li>Use <code>--show</code> to debug sensitive data while ensuring security.</li>
+        <li>Combine declarative YAML and imperative commands for robust resource management.</li>
+      </ul>
+    </section>
+    <br>
+    <section class="installation-photo">
+      <h3>Installation Steps PDF Reference for GCP Configuration</h3>
+      <p>For detailed installation steps, please refer to the PDF documentation:</p>
+      <br>
+      <object data="styles/assets/images/gcp.pdf" type="application/pdf" width="100%" height="600px">
+        <p>Your browser does not support PDFs. <a href="styles/assets/images/gcp.pdf" target="_blank">Download the PDF</a>.</p>
+      </object>
+    </section>    
+  </main>
+  
+  <footer class="footer">
+    <p>&copy; 2025 DevOps-Bot. All rights reserved.</p>
+  </footer>
+
+  <!-- JavaScript Files -->
+  <script src="scripts/main.js"></script>
+  <script>
+    function toggleNested(event) {
+      event.preventDefault();
+      const parent = event.target.parentElement;
+      parent.classList.toggle('active');
+    }
+
+    function performSearch() {
+      const query = document.getElementById('search-input').value.toLowerCase();
+      const links = document.querySelectorAll('.nav-links a, .sidebar a');
+
+      links.forEach(link => {
+        if (link.textContent.toLowerCase().includes(query)) {
+          link.style.display = 'block';
+        } else {
+          link.style.display = 'none';
+        }
+      });
+    }
+
+    function navigateHome() {
+      window.location.href = 'index.html';
+    }
+
+    function navigateOfficialWebsite() {
+      window.location.href = 'officialwebsite.html';
+    }
+  </script>
+</body>
+</html>
