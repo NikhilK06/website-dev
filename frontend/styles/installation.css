@@ -16,74 +16,11 @@ body {
     margin: 0;
 }
 
-.toolbar {
-    background-color: #1f2937;
-    color: white;
-    padding: 15px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-}
-
-.logo {
-    font-size: 24px;
-    font-weight: bold;
-}
-
-.nav-links a {
-    color: white;
-    text-decoration: none;
-    margin: 0 15px;
-    font-size: 16px;
-}
-
-.nav-links a:hover {
-    text-decoration: underline;
-}
-
-.sidebar {
-    width: 300px;
-    background-color: #374151;
-    color: white;
-    position: fixed;
-    top: 60px; /* Adjust to match the toolbar height */
-    height: calc(100% - 60px); /* Adjust to match the toolbar height */
-    padding-top: 20px;
-    display: block; /* Always visible */
-    overflow-y: auto;
-}
-
-.sidebar ul {
-    list-style: none;
-    padding: 0;
-}
-
-.sidebar li {
-    padding: 10px 20px;
-}
-
-.sidebar a {
-    color: black; /* Ensure the text color is white */
-    font-weight: bold;
-    text-decoration: none;
-}
-
-.sidebar .nested {
-    display: none;
-    padding-left: 20px;
-}
-
-.sidebar .active > .nested {
-    display: block;
-}
+/* Removed duplicate .toolbar, .logo, .nav-links, .sidebar styles */
 
 .main-content {
-    margin-left: 300px; /* Adjust to match the sidebar width */
-    padding: 80px 20px 20px 20px; /* Adjust padding to account for the fixed toolbar */
+    margin-left: 250px; /* Standardized sidebar width */
+    padding: 80px 30px 30px 30px; /* Standardized padding */
     flex: 1;
 }
 
@@ -162,34 +99,9 @@ body {
     font-family: 'Courier New', Courier, monospace;
     color: #d63384;
 }
-.search-bar {
-    display: flex;
-    align-items: center;
-    margin-left: auto;
-  }
 
-  .search-bar input {
-    padding: 5px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 5px 0 0 5px;
-    outline: none;
-  }
+  /* Removed duplicate .search-bar styles */
 
-  .search-bar button {
-    padding: 5px 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-left: none;
-    background-color: #3b82f6;
-    color: white;
-    border-radius: 0 5px 5px 0;
-    cursor: pointer;
-  }
-
-  .search-bar button:hover {
-    background-color: #1f2937;
-  }
   .docker-swarm {
     margin-top: 40px;
     padding: 30px;

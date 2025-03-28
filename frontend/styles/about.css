@@ -16,86 +16,10 @@ body {
     margin: 0;
 }
 
-.toolbar {
-    background-color: #1f2937;
-    color: white;
-    padding: 15px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-}
-.logo {
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    font-size: 20px;
-    font-weight: bold;
-}
-
-.logo-img {
-    width: 40px; /* Adjust size as needed */
-    height: 40px;
-    margin-right: 10px; /* Spacing between logo and text */
-}
-
-.logo-text {
-    font-size: 20px;
-}
-
-.nav-links a {
-    color: white;
-    text-decoration: none;
-    margin: 0 15px;
-    font-size: 16px;
-}
-
-.nav-links a:hover {
-    text-decoration: underline;
-}
-
-.sidebar {
-    width: 300px;
-    background-color: #374151;
-    color: white;
-    position: fixed;
-    top: 60px; /* Adjust to match the toolbar height */
-    height: calc(100% - 60px); /* Adjust to match the toolbar height */
-    padding-top: 20px;
-    display: block; /* Always visible */
-    overflow-y: auto;
-}
-
-.sidebar ul {
-    list-style: none;
-    padding: 0;
-}
-
-.sidebar li {
-    padding: 10px 20px;
-}
-
-.sidebar a {
-    color: black; /* Ensure the text color is white */
-    font-weight: bold;
-    text-decoration: none;
-}
-
-.sidebar .nested {
-    display: none;
-    padding-left: 20px;
-}
-
-.sidebar .active > .nested {
-    display: block;
-}
+/* Removed duplicate .toolbar, .logo, .nav-links, .sidebar styles */
 
 .main-content {
-    margin-left: 100px; /* Adjust to match the sidebar width */
-    margin-right: 100px; /* Adjust to match the sidebar width */
+    /* Removed incorrect margin-left/right for page without sidebar */
     padding: 80px 20px 20px 20px; /* Adjust padding to account for the fixed toolbar */
     flex: 1;
 }
@@ -197,6 +121,9 @@ body {
   .search-bar button:hover {
     background-color: #1f2937;
   }
+
+  /* Removed duplicate .search-bar styles */
+
   .docker-swarm {
     margin-top: 40px;
     padding: 30px;
@@ -405,4 +332,3 @@ body {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-

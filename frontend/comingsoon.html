@@ -4,14 +4,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DevOps-Bot | Coming Soon</title>
-  <link rel="stylesheet" href="styles/installation.css">
+
   <link rel="stylesheet" href="styles/navbar.css">
+  <!-- Removed incorrect installation.css link -->
+  <link rel="stylesheet" href="styles/comingsoon.css">
+
   <link rel="icon" href="styles/assets/images/favicon-32x32.png" type="image/png">
 </head>
 <body class="official">
   <!-- Header Toolbar -->
   <header class="toolbar">
-    <div class="logo" onclick="navigateHome()">DevOps-Bot</div>
+    <div class="logo" onclick="navigateHome()">
+      <img src="styles/assets/images/debops-bot.png" alt="DevOps-Bot Logo" class="logo-img">
+      <span class="logo-text">DevOps-Bot</span>
+    </div> <!-- Corrected: Added closing div tag -->
     <nav class="nav-links">
       <a href="officialwebsite.html" class="nav-link" onclick="navigateOfficialWebsite()">Home</a>
       <a href="features.html" class="nav-link">Features</a>
@@ -147,11 +153,9 @@
   <!-- Main Content Area -->
   <main class="main-content">
     <section class="hero" style="background: url('styles/assets/images/ComingSoon.png') no-repeat center center; background-size: cover;">
-        <link rel="stylesheet" href="styles/comingsoon.css"> 
-        <body>
-            <div class="bgimg">
-            </div>
-        </body>
+        <!-- Removed nested body tag -->
+        <div class="bgimg">
+        </div>
     <!-- Additional Sections -->
   </main>
 
@@ -192,4 +196,3 @@
     </script>
   </body>
   </html>
-  
